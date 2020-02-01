@@ -1,19 +1,13 @@
-FROM python:2.7-alpine
+# FROM ctfhub/base_web_gunicron_python
+FROM base_web_gunicron_python_web
 
 LABEL Author="Virink <virink@outlook.com>"
 LABEL Blog="https://www.virzz.com"
 
-ENV FLASK_APP=app.py FLASK_ENV=production
 
-ADD src /app/
+ADD src /src/
+RUN mv /src/requirements.txt /requirements.txt
+COPY _files/flag.sh /flag.sh
 
-RUN pip install \
-	-i http://mirrors.aliyun.com/pypi/simple/ \
-	--trusted-host mirrors.aliyun.com \
-	-U flask
 
-EXPOSE 5000
-
-WORKDIR /app
-
-ENTRYPOINT ["/usr/local/bin/flask","run","-h","0.0.0.0"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint"]
