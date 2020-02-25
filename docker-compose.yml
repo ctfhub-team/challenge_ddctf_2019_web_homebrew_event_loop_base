@@ -1,10 +1,9 @@
 version: "2"
 
 services:
-
   web:
     build: .
-    # image: ctftraining/ddctf_2019_homebrew_event_loop
+    image: challenge_ddctf_2019_web_homebrew_event_loop_base
     restart: always
     ports:
       - "8085:80"

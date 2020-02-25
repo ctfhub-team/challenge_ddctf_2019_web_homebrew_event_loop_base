@@ -14,10 +14,10 @@ from itsdangerous import base64_decode
 
 
 def decryption(payload):
-    payload, sig = payload.rsplit(b'.', 1)
-    payload, timestamp = payload.rsplit(b'.', 1)
+    payload, sig = payload.rsplit('.', 1)
+    payload, timestamp = payload.rsplit('.', 1)
     decompress = False
-    if payload.startswith(b'.'):
+    if payload.startswith('.'):
         payload = payload[1:]
         decompress = True
     try:
@@ -45,4 +45,4 @@ if __name__ == '__main__':
     headers = get()
     session = headers['Set-Cookie'].split('=')[1].split(';')[0]
     de = decryption(session)
-    print([i for i in de['log'] if 'show_flag' in i][0][15:])
+    print([i for i in de['log'] if b'show_flag' in i][0][15:])

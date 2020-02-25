@@ -1,6 +1,6 @@
 import os
 import urllib
-from flask import Flask, session, request, Response
+from flask import Flask, session, request, Response, redirect
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)  # censored
@@ -78,6 +78,11 @@ def execute_event_loop():
         resp = ('404 NOT FOUND', 404)
     session.modified = True
     return resp
+
+
+@app.route('/')
+def index():
+    return redirect(url_prefix+'/')
 
 
 @app.route(url_prefix+'/')
