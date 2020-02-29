@@ -1,5 +1,7 @@
 # DDCTF 2019 homebrew event loop
 
+Build with [ctfhub/base_web_gunicron_python_27](https://hub.docker.com/r/ctfhub/base_web_gunicron_python_27)
+
 ## 题目详情
 
 -  DDCTF 2019 homebrew event loop
@@ -30,4 +32,6 @@
 
 ## 版权
 
-该题目复现环境尚未取得主办方及出题人相关授权，如果侵权，请联系本人删除（ virink@outlook.com ）
+该题目复现环境尚未取得主办方及出题人相关授权，如果侵权，请联系我们删除（services#ctfhub.com）
+
+This challenge has not obtained relevant authorization from the organizer and the author. If it is infringing, please contact us to delete (services#ctfhub.com)
