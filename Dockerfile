@@ -1,4 +1,4 @@
-FROM ctfhub/base_web_gunicron_python_27
+FROM ctfhub/base_web_gunicorn_python_27
 
 ENV WORK_CLASS=gevent MODULE_NAME=app VARIABLE_NAME=app
 
